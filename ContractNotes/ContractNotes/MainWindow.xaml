@@ -1,0 +1,86 @@
+﻿<Window x:Class="ContractNotes.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ContractNotes"
+        mc:Ignorable="d"
+        Title="ContractNoteManager 1.0" Height="820" WindowStartupLocation="CenterScreen" Icon="res/contractNote.ico" Closing="Window_Closing" SizeChanged="Window_SizeChanged" MinWidth="1100" MinHeight="750" WindowState="Maximized" KeyDown="Window_KeyDown" Width="1100">
+    <Grid>
+        <Button x:Name="scanButton" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="scanButton_Click" Width="90" Height="30">
+            <StackPanel Orientation="Horizontal">
+                <Image x:Name="scanImage" Source="res/scan.png" Margin="0" Width="16" Height="20"/>
+                <TextBlock x:Name="scanTextBlock" Text="Scan" Margin="0" Width="65" Height="20" TextAlignment="Center" Foreground="#FF0064C8" FontSize="14" FontWeight="Bold"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="approveButton" HorizontalAlignment="Left" Margin="105,10,0,0" VerticalAlignment="Top" Width="90" Height="30" Click="approveButton_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image x:Name="approveImage" Source="res/approve.png" Margin="0" Width="16" Height="20"/>
+                <TextBlock x:Name="approveTextBlock" Text="Approve" Margin="0" Width="65" Height="20" TextAlignment="Center" Foreground="#FF0064C8" FontSize="14" FontWeight="Bold"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="skipButton" HorizontalAlignment="Left" Margin="200,10,0,0" VerticalAlignment="Top" Width="90" Height="30" Click="skipButton_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image x:Name="skipImage" Margin="0" Width="16" Height="20" Source="res/skip.png"/>
+                <TextBlock x:Name="skipTextBlock" Text="Skip" Margin="0" Width="65" Height="20" TextAlignment="Center" Foreground="#FF0064C8" FontSize="14" FontWeight="Bold"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="exportButton" HorizontalAlignment="Left" Margin="295,10,0,0" VerticalAlignment="Top" Width="90" Height="30" Click="exportButton_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image x:Name="exportImage" Source="res/saveFile.png" Margin="0" Width="16" Height="20"/>
+                <TextBlock x:Name="exportTextBlock" Text="Export" Margin="0" Width="65" Height="20" TextAlignment="Center" Foreground="#FF0064C8" FontSize="14" FontWeight="Bold"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="zoomInButton" HorizontalAlignment="Left" Margin="390,10,0,0" VerticalAlignment="Top" Width="90" Height="30" Click="zoomInButton_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image x:Name="zoomInImage" Source="res/zoomIn.png" Margin="0" Width="16" Height="20"/>
+                <TextBlock x:Name="zoomInTextBlock" Text="ZoomIn" Margin="0" Width="65" Height="20" TextAlignment="Center" Foreground="#FF0064C8" FontSize="14" FontWeight="Bold"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="zoomOutButton" HorizontalAlignment="Left" Margin="485,10,0,0" VerticalAlignment="Top" Width="90" Height="30" Click="zoomOutButton_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image x:Name="zoomOutImage" Source="res/zoomOut.png" Margin="0" Width="16" Height="20"/>
+                <TextBlock x:Name="zoomOutTextBlock" Text="ZoomOut" Margin="0" Width="65" Height="20" TextAlignment="Center" Foreground="#FF0064C8" FontSize="14" FontWeight="Bold"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="prevPageButton" HorizontalAlignment="Left" Margin="580,10,0,0" VerticalAlignment="Top" Width="90" Height="30" Click="prevPageButton_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image x:Name="prevPageImage" Source="res/prevPage.png" Margin="0" Width="16" Height="20"/>
+                <TextBlock x:Name="prevPageTextBlock" Text="Previous" Margin="0" Width="65" Height="20" TextAlignment="Center" Foreground="#FF0064C8" FontSize="14" FontWeight="Bold"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="nextPageButton" HorizontalAlignment="Left" Margin="675,10,0,0" VerticalAlignment="Top" Width="90" Height="30" Click="nextPageButton_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image x:Name="nextPageImage" Source="res/nextPage.png" Margin="0" Width="16" Height="20"/>
+                <TextBlock x:Name="nextPageTextBlock" Text="Next" Margin="0" Width="65" Height="20" TextAlignment="Center" Foreground="#FF0064C8" FontSize="14" FontWeight="Bold"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="settingButton" HorizontalAlignment="Left" Margin="770,10,0,0" VerticalAlignment="Top" Width="90" Height="30" Click="settingButton_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image x:Name="settingImage" Source="res/settings.png" Margin="0" Width="16" Height="20"/>
+                <TextBlock x:Name="settingTextBlock" Text="Setting" Margin="0" Width="65" Height="20" TextAlignment="Center" Foreground="#FF0064C8" FontSize="14" FontWeight="Bold"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="helpButton" HorizontalAlignment="Left" Margin="865,10,0,0" VerticalAlignment="Top" Width="90" Height="30" Click="helpButton_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image x:Name="helpImage" Source="res/help.png" Margin="0" Width="16" Height="20"/>
+                <TextBlock x:Name="helpTextBlock" Text="Help" Margin="0" Width="65" Height="20" TextAlignment="Center" Foreground="#FF0064C8" FontSize="14" FontWeight="Bold"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="quitButton" HorizontalAlignment="Left" Margin="960,10,0,0" VerticalAlignment="Top" Width="90" Height="30" Click="quitButton_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image x:Name="quitImage" Source="res/quit.png" Margin="0" Width="16" Height="20"/>
+                <TextBlock x:Name="quitTextBlock" Text="Quit" Margin="0" Width="65" Height="20" TextAlignment="Center" Foreground="#FF0064C8" FontSize="14" FontWeight="Bold"/>
+            </StackPanel>
+        </Button>
+        <Border x:Name="resultCanvasBorder" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="575" Margin="11,48,0,0" VerticalAlignment="Top" Width="382">
+            <Canvas x:Name="resultCanvas" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+        </Border>
+        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="150" Margin="11,628,0,0" VerticalAlignment="Top" Width="382" SelectionChanged="listBox_SelectionChanged"/>
+        <Border x:Name="scrollViewerBorder" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="730" Margin="398,48,0,0" VerticalAlignment="Top" Width="684" Padding="0">
+            <ScrollViewer x:Name="scrollViewer" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <Image x:Name="image" Stretch="None"/>
+            </ScrollViewer>
+        </Border>
+    </Grid>
+</Window>

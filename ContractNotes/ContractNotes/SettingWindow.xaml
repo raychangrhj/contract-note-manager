@@ -1,0 +1,32 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ContractNotes"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="ContractNotes.SettingWindow"
+        mc:Ignorable="d"
+        Title="Rule Setting" Height="300" Width="300" WindowStartupLocation="CenterScreen" Icon="res/settings.png" MinWidth="850" MinHeight="500" SizeChanged="Window_SizeChanged" Closing="Window_Closing" Loaded="Window_Loaded">
+    <Grid>
+        <DataGrid x:Name="dataGrid" IsReadOnly="True" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top" Height="300" Width="810" SelectionMode="Single" SelectionChanged="dataGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Instance" Binding="{Binding Instance}" />
+                <DataGridTextColumn Header="Source" Binding="{Binding Source}" />
+                <DataGridTextColumn Header="Destination" Binding="{Binding Destination}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="addButton" Content="Add Rule" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="addButton_Click"/>
+        <Button x:Name="deleteButton" Content="Delete Rule" HorizontalAlignment="Left" Margin="120,10,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="deleteButton_Click" IsEnabled="False"/>
+        <Button x:Name="saveButton" Content="Save" HorizontalAlignment="Left" Margin="340,10,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="saveButton_Click" IsEnabled="False"/>
+        <Button x:Name="closeButton" Content="Close" HorizontalAlignment="Left" Margin="450,10,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="closeButton_Click"/>
+        <Label Content="Instance" HorizontalAlignment="Left" Margin="15,50,0,0" VerticalAlignment="Top" Width="90" Height="25" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="instanceTextBox" HorizontalAlignment="Left" Height="25" Margin="110,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" VerticalContentAlignment="Center"/>
+        <Label Content="Source" HorizontalAlignment="Left" Margin="15,80,0,0" VerticalAlignment="Top" Width="90" Height="25" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="sourceTextBox" HorizontalAlignment="Left" Height="25" Margin="110,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="650" VerticalContentAlignment="Center" IsReadOnly="True"/>
+        <Button x:Name="browseSourceButton" Content=". . ." HorizontalAlignment="Left" Margin="760,80,0,0" VerticalAlignment="Top" Width="25" Height="25" Click="browseSourceButton_Click"/>
+        <Label Content="Destination" HorizontalAlignment="Left" Margin="15,110,0,0" VerticalAlignment="Top" Width="90" Height="25" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="destinationTextBox" HorizontalAlignment="Left" Height="25" Margin="110,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="650" VerticalContentAlignment="Center" IsReadOnly="True"/>
+        <Button x:Name="browseDestinationButton" Content=". . ." HorizontalAlignment="Left" Margin="760,110,0,0" VerticalAlignment="Top" Width="25" Height="25" Click="browseDestinationButton_Click"/>
+        <Button x:Name="updateButton" Content="Update Rule" HorizontalAlignment="Left" Margin="230,10,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="updateButton_Click" IsEnabled="False"/>
+    </Grid>
+</Window>
